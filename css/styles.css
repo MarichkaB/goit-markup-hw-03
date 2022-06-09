@@ -15,6 +15,19 @@
   --secondary-bc-color: #2f303a;
 }
 
+/* Глобальный сброс margin and padding */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  padding: 0;
+  margin: 0;
+}
+
 /* Убираем точки рядом со списками */
 ul {
   list-style: none;
@@ -26,9 +39,31 @@ ul {
   color: var(--primery-text-color);
 }
 
-/* .list {
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-header {
+  border-bottom: 1px solid #ececec;
+}
+
+.page-header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
   list-style: none;
-} */
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 
 /* Лого сайта*/
 .logo {
@@ -39,6 +74,12 @@ ul {
   letter-spacing: 0.03em;
   color: #000000;
   text-decoration: none;
+
+  align-items: center;
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 93px;
 }
 
 .logo-web {
@@ -77,12 +118,60 @@ ul {
   color: var(--accent-text);
 }
 
-/* Шапка */
-.section-page {
-  background-color: var(--secondary-bc-color);
+.header-nav,
+.auth-nav {
+  display: flex;
+  align-items: center;
 }
 
+.site-nav .link,
+.auth-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.site-nav .item:not(:last-child),
+.auth-nav .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.auth-nav {
+  margin-left: auto;
+}
+
+.site-nav {
+  display: flex;
+}
+
+/* Шапка */
+.section-page {
+  height: 600px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  background-color: var(--secondary-bc-color);
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+/* .section-page.section {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+} */
+
 .page-title {
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 696px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -99,14 +188,21 @@ button {
 }
 
 .btn {
+  padding: 10px 32px;
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
+
   color: var(--primery-white-color);
   background-color: var(--accent-text);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .btn:hover,
@@ -116,7 +212,39 @@ button {
 }
 
 /* Особенности */
+.features {
+  padding-bottom: 0;
+}
+
+/* не засчитывайте как ошибку пожалуйста ¯\_(ツ)_/¯*/
+.hidden {
+  /* display: none; */
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.features-list {
+  display: flex;
+}
+
+.features-item {
+  max-width: 270px;
+}
+
+.features-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 .feature-title {
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -134,7 +262,21 @@ button {
 }
 
 /* Чем мы занимаемся */
+.work {
+  align-items: center;
+}
+
+.work-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.work-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 .section-title {
+  margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
@@ -144,14 +286,32 @@ button {
 }
 
 /* Команда */
-.section-team {
+.team {
   background-color: #f5f4fa;
 }
 
+.team-list {
+  display: flex;
+}
+
+.team-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-item {
+  padding-bottom: 30px;
+  background-color: var(--primery-bc-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
 .team-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.18;
+  line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--primery-text-color);
@@ -205,8 +365,16 @@ button {
 
 /* Подвал */
 .footer {
+  display: block;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--secondary-bc-color);
 }
+
+.adress {
+  margin-top: 20px;
+}
+
 .footer-logo {
   font-family: "Raleway";
   font-style: normal;
@@ -222,6 +390,7 @@ button {
 }
 
 .adress-link {
+  margin-bottom: 9px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -249,4 +418,8 @@ button {
 .contact-link:hover,
 .contact-link:focus {
   color: var(--accent-text);
+}
+
+.contact-link:not(:last-child) {
+  margin-bottom: 9px;
 }
