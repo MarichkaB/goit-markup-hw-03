@@ -411,6 +411,10 @@ img {
   background-color: var(--secondary-bc-color);
 }
 
+.footer-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
 .adress {
   margin-top: 20px;
 }
@@ -430,7 +434,6 @@ img {
 }
 
 .adress-link {
-  margin-bottom: 9px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -458,8 +461,4 @@ img {
 .contact-link:hover,
 .contact-link:focus {
   color: var(--accent-text);
-}
-
-.contact-link:not(:last-child) {
-  margin-bottom: 9px;
 }
